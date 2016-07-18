@@ -1,0 +1,28 @@
+<div style="margin:200px 500px 200px 500px">
+<tabs></tabs>
+<div>Update User</div><br/>
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<td style="width:100px;">S.no</td>
+					<td style="width:100px;">Name</td>
+					<td style="width:100px;">Exp</td>
+					<td style="width:100px;">Cell.no</td>
+				</tr>
+			</thead>
+			<tr ng-repeat= 'user in upd.userList track by $index' ng-if='user.display'>
+				<td style="width:100px; align:center">{{$index+1}}</td>
+				<td style="width:100px; align:center"><input type="text" size="7" ng-model="user.name"/></td>
+				<td style="width:100px; align:center"><input style="text-align: center;" type="text" size="1" ng-model="user.exp"/></td>
+				<td style="width:100px; align:center"><input type="text" size="7" ng-model="user.cell"/></td>
+				<td><input type="button" value="Update" ng-click="upd.updateUser(user)"/></td>
+			</tr>
+		</table>
+	</div>
+	<div style="height:40px; width:350px;">
+		<div style=" float:right; margin-top:20px">
+			<div style="display: inline-block; cursor:pointer; width:25px;" ng-repeat="n in upd.pageList" ng-click="upd.getNextPage(n)">{{n}}</div>
+		</div>
+	</div>
+</div>

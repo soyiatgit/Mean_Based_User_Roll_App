@@ -1,0 +1,26 @@
+<div style="margin:200px 500px 200px 500px">
+<tabs></tabs>
+Search : <input type="text" ng-model="dsp.searchText" ng-change="dsp.search(dsp.searchText)"/><br/><br/>
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<td style="width:100px;">S.no</td>
+					<td style="width:100px;">Name</td>
+					<td style="width:100px;">Exp</td>
+					<td style="width:100px;">Cell.no</td>
+				</tr>
+			</thead>
+			<tr ng-repeat= 'user in dsp.userList track by $index' ng-if='user.display'>
+				<td style="width:100px; align:center">{{$index+1}}</td>
+				<td style="width:100px; align:center">{{user.name}}</td>
+				<td style="width:100px; align:center">{{user.exp}}</td>
+				<td style="width:100px; align:center">{{user.cell}}</td>
+			</tr>
+		</table>
+	</div>
+	<div ng-if="dsp.noData"> No Search result matching your request</div>
+	<div style="height:40px; margin-left:100px; float:right">
+		<div style="display: inline-block; cursor:pointer; width:25px; margin-top:20px" ng-repeat="n in dsp.pageList" ng-click="dsp.getNextPage(n)">{{n}}</div>
+	</div>
+</div>

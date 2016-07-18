@@ -1,0 +1,14 @@
+<div style="margin:150px 500px 200px 500px">
+<tabs></tabs>
+<div style="width:400px;"><span>Snake and Ladder Board</span>&nbsp;&nbsp;<span><input type="button" value="Roll" ng-click="snl.rollTheDiceForUser()"/></span>&nbsp;&nbsp;<span><input type="button" value="Roll" ng-click="snl.rollTheDiceForComp()"/></span><span>{{snl.diceValue}}</span></div><br/>
+	<div style="height: 400px; width:400px;">
+		<!-- <div ng-repeat ="r in [1,2,3,4,5,6,7,8,9,0]" style="height: 35px; width:100%; border: 1px solid;">
+			<!-- <span ng-repeat ="c in [1,2,3,4,5,6,7,8,9,0]" style="height: 100%; width:34px; border: 1px solid; display:inline-block;">
+			
+			</span> 
+		</div> -->
+		<div ng-repeat ="n in snl.numbers" style="height:38px; width:38px; border:1px solid; display:inline-block; text-align:center;" ng-class="{'user': $index+1 == snl.currentUser,'comp':$index+1 == snl.currentComp}">
+		{{n.value}}
+		</div>
+	</div>
+</div>

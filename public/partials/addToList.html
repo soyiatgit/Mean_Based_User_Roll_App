@@ -1,0 +1,20 @@
+<div style="margin:200px 500px 200px 500px">
+	<tabs></tabs>
+	<div>Add User</div><br/>
+	<div>
+	 <table>
+	  <tr>
+		<td style="width:100px"><label>Name</label></td><td><input type="text" ng-model="add.newUser.name" /></td>
+	  </tr>
+	  <tr>
+		<td style="width:100px"><label>Exp</label></td><td><input type="text" ng-model="add.newUser.exp" /></td>
+	  </tr>
+	  <tr>
+		<td style="width:100px"><label>Cell No.</label></td><td><input type="text" ng-model="add.newUser.cell" /></td>
+	  </tr>
+	  <tr>
+		<td style="width:100px"><label></label></td><td><input type="button" value="Add User" ng-click="add.addUser(add.newUser)" />&nbsp;&nbsp;<input type="button" value="Reset" ng-click="add.resetUser" /></td>
+	  </tr>
+	</table>
+	</div>
+</div>

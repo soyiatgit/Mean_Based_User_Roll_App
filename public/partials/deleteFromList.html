@@ -1,0 +1,54 @@
+<div style="margin:200px 500px 200px 500px">
+<tabs></tabs>
+<div>Delete User</div><br/>
+	<div style="height:250px" ng-if="!dsp.noData">
+		<table>
+			<thead>
+				<tr>
+					<td style="width:100px;">S.no</td>
+					<td style="width:100px;">Name</td>
+					<td style="width:100px;">Exp</td>
+					<td style="width:100px;">Cell.no</td>
+					<td style="width:100px;"></td>
+					<td style="width:100px;"></td>
+				</tr>
+			</thead>
+			<tr ng-repeat= 'user in del.userList track by $index' ng-if='user.display'>
+				<td style="width:100px; align:center">{{$index+1}}</td>
+				<td style="width:100px; align:center">{{user.name}}</td>
+				<td style="width:100px; align:center">{{user.exp}}</td>
+				<td style="width:100px; align:center">{{user.cell}}</td>
+				<td style="width:100px; align:center"><input type="button" value="Delete" ng-click="del.deleteUser(user)"/></td>
+				<td style="width:100px; align:center"><input type="button" value="Find" ng-click="del.findUser(user)"/></td>
+			</tr>
+		</table>
+	</div>
+	<div style="height:40px; width:350px;margin-top:20px">
+	<div style=" float:right; margin-top:20px">
+		<div style="display: inline-block; cursor:pointer; width:25px;" ng-repeat="n in del.pageList" ng-click="del.getNextPage(n)">{{n}}</div>
+	</div>
+	</div>
+
+    <!--div to be displayed on click of find to display similar profile -->
+	
+	<div ng-if=del.found>
+	<div>Found User</div><br/>
+		<table>
+			<thead>
+				<tr>
+					<td style="width:100px;">S.no</td>
+					<td style="width:100px;">Name</td>
+					<td style="width:100px;">Exp</td>
+					<td style="width:100px;">Cell.no</td>
+				</tr>
+			</thead>
+			<tr ng-repeat= 'user in del.findList track by $index'>
+				<td style="width:100px; align:center">{{$index+1}}</td>
+				<td style="width:100px; align:center">{{user.name}}</td>
+				<td style="width:100px; align:center">{{user.exp}}</td>
+				<td style="width:100px; align:center">{{user.cell}}</td>
+				<td><input type="button" value="Delete" ng-click="del.deleteUser(user)"/></td>
+			</tr>
+		</table>
+	</div>
+</div>

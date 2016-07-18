@@ -1,0 +1,17 @@
+<div style='paddingLeft:200px;paddingRight:200px;padding-top:300px'>
+	<table>
+		<thead>
+			<tr>
+				<td>S.no</td>
+				<td>Name</td>
+				<td>Exp</td>
+				<td>Cell.no</td>
+			</tr>
+		</thead>
+		<tr ng-repeat= 'user in dsp.userList track by $index'>
+			<td>{{user.fName}}</td>
+			<td>{{user.lName}}</td>
+			<td>{{user.age}}</td>
+		</tr>
+	</table>
+</div>
